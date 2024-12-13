@@ -1,0 +1,86 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "philter",
+	"patterns": [{
+		"include": "#operator"
+	},
+	{
+		"include": "#number"
+	},
+	{
+		"include": "#keywords"
+	},
+	{
+		"include": "#strings"
+	},
+	{
+		"include": "#comment-line"
+	},
+	{
+		"include": "#variables"
+	}],
+	"repository": {
+		"operator": {
+			"patterns": [{
+				"name": "punctuation.definition.tag",
+				"match": "(\\{|\\}|\\[|\\]|\\(|\\)|\\;|\\:|\\,)"
+			},
+			{
+				"name": "keyword.operator",
+				"match": "(=|<|>|\\-|\\+|\\*)"
+			}]
+		},
+		"number": {
+			"patterns": [{
+				"name": "entity.name.function",
+				"match": "\\b(\\d+)\\b"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword",
+				"match": "\\b(Show|Hide|Continue)\\b"
+			},
+			{
+				"name": "entity.name.function",
+				"match": "\\b(Rare|Normal|Magic|Unique|True|False|Crusader|Redeemer|Hunter|Elder|Shaper|Warlord|Divergent|Phantasmal|Anomalous|Blue|Green|Brown|Red|White|Yellow|Cyan|Grey|Orange|Pink|Purple|Circle|Diamond|Hexagon|Square|Star|Triangle|Cross|Moon|Raindrop|Kite|Pentagon|UpsideDownHouse|Temp|NONE|None)\\b"
+			},
+			{
+				"name": "variable",
+				"match": "\\b(Replica|AlternateQuality|FracturedItem|SynthesisedItem|AnyEnchantment|BlightedMap|ShapedMap|ElderItem|ShaperItem|Corrupted|Identified|ElderMap|Mirrored|HasInfluence|GemQualityType|LinkedSockets|Sockets|Quality|MapTier|Width|Height|StackSize|CorruptedMods|GemLevel|ItemLevel|DropLevel|AreaLevel|Rarity|EnchantmentPassiveNum|SocketGroup|Class|BaseType|Prophecy|HasExplicitMod)\\b"
+			},
+			{
+				"name": "storage",
+				"match": "\\b(SetFontSize|SetTextColor|SetBorderColor|SetBackgroundColor|DisableDropSound|PlayAlertSound|PlayAlertSoundPositional|CustomAlertSound|PlayEffect|MinimapIcon)\\b"
+			},
+			{
+				"name": "storage",
+				"match": "var"
+			},
+			{
+				"name": "variable",
+				"match": "\\$\\w*"
+			}]
+		},
+		"strings": {
+			"name": "string",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [{
+				"name": "string",
+				"match": "\\\\"
+			}]
+		},
+		"comment-line": {
+			"name": "comment",
+			"begin": "#",
+			"end": "\n",
+			"patterns": [
+			{
+				"name": "comment",
+				"match": "\\\\"
+			}]
+		}
+	},
+	"scopeName": "source.philter"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "philter-lang",
+  "displayName": "philter-lang",
+  "description": "Language extension for philter, a path of exile item filter generator",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "philter",
+      "aliases": ["philter", "philter"],
+      "extensions": [".philter"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "philter",
+      "scopeName": "source.philter",
+      "path": "./syntaxes/philter.tmLanguage.json"
+    }]
+  }
+}
