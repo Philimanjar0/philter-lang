@@ -60,6 +60,9 @@
 			{
 				"name": "variable",
 				"match": "\\$\\w*"
+			},{
+				"name": "keyword.control",
+				"match": "\\b(import)\\b"
 			}]
 		},
 		"strings": {
